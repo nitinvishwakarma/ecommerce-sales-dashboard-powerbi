@@ -23,30 +23,6 @@ category, and time period drill-down
 
 ---
 
-## DAX Measures Used
-```dax
--- Year to Date Sales
-YTD Sales = TOTALYTD(SUM(Sales[Revenue]), Dates[Date])
-
--- Previous Year to Date Sales
-PYTD Sales = CALCULATE(
-    SUM(Sales[Revenue]),
-    SAMEPERIODLASTYEAR(Dates[Date])
-)
-
--- YTD vs PYTD Variance
-YTD vs PYTD = [YTD Sales] - [PYTD Sales]
-
--- Top 5 Products Ranking
-Top 5 Products = 
-RANKX(ALL(Products[ProductName]), [Total Sales], , DESC, DENSE)
-
--- Profit Margin %
-Profit Margin % = DIVIDE([Total Profit], [Total Sales]) * 100
-```
-
----
-
 ## Screenshots
 
 ### Dashboard Overview
